@@ -1,3 +1,4 @@
+from tree_node import Node
 class Stack:
     def __init__(self, data):
         self.head = Node(data)
@@ -26,3 +27,18 @@ class Stack:
         if self.head is None:
             return None
         return self.head.data
+    
+    def print_index(self, index): # if index == 0, return the 10 at the top of the stack
+        current = self.head
+        count = 0
+        while current:
+            if count == index:
+                return current.data
+            count += 1
+            current = current.next
+        return None
+    
+    def clear(self):
+        self.head = None
+
+test = Stack(10)

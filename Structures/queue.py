@@ -1,4 +1,9 @@
-class queue: # add data to the end of the queue, remove data from the front of the queue
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+class Queue: # add data to the end of the queue, remove data from the front of the queue
     def __init__(self, data):
         self.head = Node(data)
         self.tail = self.head
@@ -10,8 +15,10 @@ class queue: # add data to the end of the queue, remove data from the front of t
         self.size += 1
     
     def dequeue(self):
+        head = self.head
         self.head = self.head.next
         self.size -= 1
+        return head.data
         
     def peek(self): # return the first element in the queue which is the head
         return self.head.data

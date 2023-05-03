@@ -1,5 +1,9 @@
-from tree_node import Node
-class Stack:
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+class Stack: # add data to the top of the stack, remove data from the top of the stack
     def __init__(self, data):
         self.head = Node(data)
         
@@ -40,5 +44,3 @@ class Stack:
     
     def clear(self):
         self.head = None
-
-test = Stack(10)

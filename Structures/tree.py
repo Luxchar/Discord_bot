@@ -1,13 +1,23 @@
 class Node_tree: 
-  def __init__(self, question: str, yes_node: object, no_node: object):
+  def __init__(self, question, reponses):
     self.question = question
-    self.yes_node = yes_node
-    self.no_node = no_node
+    self.reponses = reponses
+    self.next_nodes = []
 
-  def append(self, question: str, yes_node: object, no_node: object):
-    self.yes_node.append(question,yes_node,no_node)
-    self.no_node.append(question,yes_node,no_node)
-    
+  def append(self, question, reponses, previous_question):
+    if previous_question == self.question:
+      self.next_nodes.append(Node_tree(question,reponses))
+    else:
+      for N in self.next_nodes:
+        N.append(question,reponses,previous_question)
+
+  def delete(self,question):
+    for N in self.next_nodes:
+        if N.question == question:
+            del N # delete the node
+    else:
+        N.delete(question)
+        
 class Tree:
   def __init__(self,first_question):
     self.first_node = Node_tree(first_question,[])
@@ -15,6 +25,12 @@ class Tree:
 
   def append_question(self,question,reponses,previous_question):
     self.first_node.append(question,reponses,previous_question)
+
+  def delete_question(self,question):
+    if self.first_node.question == question:
+      self.first_node = None
+    else:
+      self.first_node.delete(question)
 
   def get_question(self):
     return self.current_node.question

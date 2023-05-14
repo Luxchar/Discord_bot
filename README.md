@@ -1,3 +1,12 @@
+# Run the project
+- Create a virtual environment with `python3 -m venv venv` and pip install the requirements with `pip install -r requirements.txt`
+- Create a .env and add a variable `BOT_TOKEN='token'` with the token of your bot
+- Run the bot with `python3 bot.py` or run the .ipynb file
+
+## Type !help when the bot is running to see all the commands
+Here is a rundown of the major functionalities anyway:
+## Bot functionalities
+
 This bot has multiple functionalities:
 
 1. It has an history of all the messages sent in the channel, and it can be searched by the user.

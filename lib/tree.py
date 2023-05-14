@@ -41,3 +41,15 @@ class Tree:
         self.current_node = N
         break
     return self.current_node.question
+  
+  def reset(self):
+    self.current_node = self.first_node
+    
+  def speak_about(self,question):
+    if self.first_node.question == question:
+      return self.first_node.reponses
+    else:
+      for N in self.first_node.next_nodes:
+        if N.question == question:
+          return N.reponses
+      return None

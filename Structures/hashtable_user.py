@@ -9,7 +9,7 @@ class Hashtable_user:
     indice_bucket = hash_key % len(self.buckets)
     self.buckets[indice_bucket].append((key,value))
 
-  def get(self, key):
+  def get_history(self, key):
     hash_key = hash(key)
     indice_bucket = hash_key % len(self.buckets)
     for k,v in self.buckets[indice_bucket]:

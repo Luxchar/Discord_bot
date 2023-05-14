@@ -1,5 +1,5 @@
 class Hashtable:
-    def __init__(self, elements):
+    def __init__(self, elements): # elements is a list of tuples (key, value)
         self.bucket_size = len(elements)
         self.buckets = [[] for i in range(self.bucket_size)]
         self._assign_buckets(elements)

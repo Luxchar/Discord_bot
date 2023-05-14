@@ -12,11 +12,21 @@ class Hashtable(commands.Cog):
     @commands.command()
     async def history2_print(self, ctx):
         """Show the history of the user."""
-        user = history2.get_history(ctx.author.id)
+        user = self.history2.get_history(ctx.author.id)
         if user is None:
             await ctx.send("You don't have any history")
         else:
             await ctx.send(user)
+            
+            
+    @commands.Cog.listener()
+    async def on_command_completion_hashtable(self, ctx):
+        """Save the command in the history of the user."""
+        blacklist = ['history_head', 'history_next', 'history_previous', 'history_clear', 'print_history_index']
+        if ctx.author.bot or ctx.command.name in blacklist:
+            return
+
+        self.history2.push(ctx.author.id, ctx.command.name)
 
 def setup(client):
     return client.add_cog(Hashtable(client))

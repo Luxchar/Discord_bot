@@ -34,13 +34,13 @@ class Tree:
 
   def get_question(self):
     return self.current_node.question
-
-  def send_answer(self, reponse):
-    for N in self.current_node.next_nodes:
-      if N.reponses == reponse:
-        self.current_node = N
-        break
-    return self.current_node.question
+    
+  def send_answer(self, response):
+      for N in self.current_node.next_nodes:
+          if response in N.reponses:
+              self.current_node = N
+              break
+      return self.current_node.question
   
   def reset(self):
     self.current_node = self.first_node

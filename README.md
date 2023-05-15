@@ -25,3 +25,39 @@ This bot has multiple functionalities:
     - 
 
 6. The bot has a built in help command that explains all the functionalities of the bot. USAGE: `/commands`
+
+# Table of content
+
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Introduction
+Discord bot that has multiple functionalities like history of commands, mini games and more..
+
+## Project features
+- History of commands (implemented with a stack)
+- Discussion system (implemented with a tree)
+- Logs of commands per user (implemented with a hashmap)
+- Persistent data (implemented with json files)
+- Help command
+- Mini games
+- Moderation commands
+
+## Installation
+Make sure you have **python** installed on your system
+Run ```pip install -r requirements.txt``` to install all the dependencies
+<br><br>
+If you have any problems with the installation, you can open an issue in this repository.
+
+## Usage
+Run the .ipynb file
+
+## Contributing
+If you want to contribute to this project you can fork this repository and make a pull request with your changes.
+Anyone is welcome to contribute to this project.
+
+## License
+This project is under the MIT license.

@@ -58,7 +58,7 @@ class Quiz(commands.Cog):
     @commands.command()
     async def answer(self, ctx, arg):
         """Answer the question of the bot"""
-        user = self.users_tree.get(ctx.author.id)
+        user = await self.users_tree.get(ctx.author.id)
         if user is None:
             await ctx.channel.send("You need to start a game first")
             return

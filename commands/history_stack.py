@@ -1,4 +1,5 @@
 from discord.ext import commands
+import os
 import sys
 sys.path.append("..") # Adds higher directory to python modules path.
 
